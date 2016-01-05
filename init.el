@@ -110,6 +110,13 @@
 ;;(set-face-background 'region "pale turquoise")
 ;;(set-face-background 'region "light blue")
 
+;; http://www.emacswiki.org/emacs/UntabifyUponSave
+(setq-default indent-tabs-mode nil)
+(add-hook 'write-file-hooks
+          (lambda () (if (not indent-tabs-mode)
+                         (untabify (point-min) (point-max)))
+            nil))
+
 ;; Drag'n Drop
 (define-key global-map [ns-drag-file] 'ns-find-file)
 (setq ns-pop-up-frames nil)
