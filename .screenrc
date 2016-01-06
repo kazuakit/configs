@@ -1,0 +1,15 @@
+termcapinfo xterm* ti@:te@
+defencoding utf8
+escape ^z^z
+
+shelltitle "$ |zsh"
+hardstatus alwayslastline "%`%-w%{=b bw}%n %t%{-}%+w"
+bind s
+startup_message off
+autodetach on
+defscrollback 100000
+
+# screen -t 'util' 0
+screen -t 'main' 1
+screen -t 'ipython' 2
+screen -t 'jupyter' 3
